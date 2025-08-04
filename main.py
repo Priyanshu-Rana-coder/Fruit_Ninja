@@ -105,7 +105,7 @@ while True:
     img=cv.resize(img,(hCam,wCam))
     
     if total_life==3:
-        lives_list= [cv.imread(r"Player_hearts\black.jpg")]
+        lives_list= [cv.imread(r"Player_hearts\red.jpg")]
         lives_list.append(lives_list[0])
         lives_list.append(lives_list[0])
     #draws the heart images on the screen
