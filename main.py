@@ -18,7 +18,7 @@ def listProvider(folderPath,myList):
 #this function changes the heart image to black when the player loses a life
 #this function takes the number of lives left and the list of heart images as input and returns the updated list
 def lives_left(num,list1):
-    list1[num]= cv.imread(r"C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Player_hearts\black.jpg")
+    list1[num]= cv.imread(r"Player_hearts\black.jpg")
     return list1
 
 # this function displays the heart images on the screen
@@ -45,7 +45,7 @@ detector=htm.handDetector(detectionCon=0.9)
 pTime=0
 
 # Gets the fruits images in the folder
-image_folderPath = r"C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Fruit_Images"
+image_folderPath = "Fruit_Images"
 myList_image = os.listdir(image_folderPath)
 overlayList_image = listProvider(image_folderPath,myList_image).copy()
 
@@ -105,7 +105,7 @@ while True:
     img=cv.resize(img,(hCam,wCam))
     
     if total_life==3:
-        lives_list= [cv.imread(r"C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Player_hearts\red.jpg")]
+        lives_list= [cv.imread(r"Player_hearts\black.jpg")]
         lives_list.append(lives_list[0])
         lives_list.append(lives_list[0])
     #draws the heart images on the screen
@@ -173,7 +173,7 @@ while True:
             # Check which fruit was sliced and update score/lives accordingly
             if fruit[0] == 0:
                 pygame.mixer.init()
-                pygame.mixer.music.load(r'C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Sounds\sword.mp3')
+                pygame.mixer.music.load(r'Sounds\bomb.mp3')
                 pygame.mixer.music.play()
                 #print("Apple sliced!")
                 extra_point = 1
@@ -181,14 +181,14 @@ while True:
             elif fruit[0] == 1:
                 #print("Banana sliced!")
                 pygame.mixer.init()
-                pygame.mixer.music.load(r'C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Sounds\sword.mp3')
+                pygame.mixer.music.load(r'Sounds\sword.mp3')
                 pygame.mixer.music.play()
                 extra_point = 2
                 total_score += 2
             elif fruit[0] == 3:
                 #print("Coconut sliced!")
                 pygame.mixer.init()
-                pygame.mixer.music.load(r'C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Sounds\sword.mp3')
+                pygame.mixer.music.load(r'Sounds\sword.mp3')
                 pygame.mixer.music.play()
                 extra_point = 3
                 total_score += 3
@@ -198,7 +198,7 @@ while True:
                 lives_list=lives_left(total_life,lives_list)
                 img= heart_shower(img,lives_list)
                 pygame.mixer.init()
-                pygame.mixer.music.load(r'C:\Users\OMEN\Desktop\Skills\Prashy Projects\Fruit Ninja\Sounds\bomb.mp3')
+                pygame.mixer.music.load(r'Sounds\bomb.mp3')
                 pygame.mixer.music.play()
                 if total_life <= 0:
                     #print("Game Over! You have no lives left.")
