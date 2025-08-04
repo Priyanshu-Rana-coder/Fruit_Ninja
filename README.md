@@ -13,7 +13,8 @@ A fully-functioning Fruit Ninja clone—slice fruits, avoid bombs, and challenge
 
 ## 🖥️ Demo
 
-*(Insert a GIF or screenshot here)*
+*![Test File](https://github.com/user-attachments/assets/893eb06d-ad54-4ad1-9935-ec447e29e131)
+*
 
 ## 🚀 Installation
 
